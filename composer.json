@@ -1,0 +1,31 @@
+{
+    "name": "victorenogwe/wordpress-12-factor-starter",
+    "description": "wordpress 12 factor app starter",
+	"type": "project",
+	"repositories": {
+        "0": {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+		}
+	},
+    "require": {
+        "php": "^7.3",
+        "google/cloud": "^0.99.0",
+        "johnpbloch/wordpress": "^5.1",
+        "wpackagist-plugin/wordpress-importer": "^0.6.4",
+        "wpackagist-theme/understrap": "^0.9.1"
+    },
+    "require-dev": {
+		"squizlabs/php_codesniffer": "^3.4",
+		"wp-cli/wp-cli": ">=1.1"
+	},
+    "config": {
+        "sort-packages": true
+    },
+    "authors": [
+        {
+            "name": "victor-enogwe",
+            "email": "victor.enogwe@gmail.com"
+        }
+    ]
+}
