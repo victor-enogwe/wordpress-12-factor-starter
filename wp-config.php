@@ -24,7 +24,6 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 $onProd = false;
-$THEME_DIR = getenv('THEME_DIR');
 $THEME_NAME = getenv('THEME_NAME');
 
 // database credentials
@@ -114,8 +113,7 @@ define('DISABLE_WP_CRON', false);
 define('WP_DEBUG', !$onProd);
 define('WP_MEMORY_LIMIT', '512M');
 // activate default theme
-if ($THEME_DIR) {
-    define('WP_DEFAULT_THEME_DIR', $THEME_DIR);
+if ($THEME_NAME) {
     define('WP_DEFAULT_THEME', $THEME_NAME);
 }
 // disable automatic updates
