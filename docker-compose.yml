@@ -1,0 +1,40 @@
+version: '3.6'
+volumes:
+  mysql:
+services:
+    php:
+        image: richarvey/nginx-php-fpm:latest
+        container_name: php
+        volumes:
+            - "./:/var/www/"
+            - "./wp-content:/var/www/wordpress/wp-content"
+        ports:
+            - 8080:80
+            - 443:443
+            - 9000:9000
+        env_file: "./.env"
+        depends_on:
+            - mysql
+        restart: always
+    mysql:
+        image: mariadb
+        container_name: mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=wp_db
+        volumes:
+            - mysql:/var/lib/mysql2
+        ports:
+            - 3306:3306
+        restart: always
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: phpmyadmin
+        ports:
+            - 5001:80
+        environment:
+            - PMA_ARBITRARY=1
+            - PMA_HOST=mysql
+        restart: always
+        depends_on:
+            - mysql
