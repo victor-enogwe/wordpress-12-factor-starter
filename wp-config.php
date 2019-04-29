@@ -7,7 +7,7 @@
  * copy this file to "wp-config.php" and fill in the values.
  *
  * This file contains the following configurations:
- *
+ * Php Version 7
  * * MySQL settings
  * * Secret keys
  * * Database table prefix
@@ -74,20 +74,20 @@ define('DB_COLLATE', '');
  * Authentication Unique Keys and Salts.
  *
  * Change these to different unique phrases!
- * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
- * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
+ * generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/}
+ * You can change these at any point in time to invalidate all existing cookies.
  *
  * @since 2.6.0
  */
 
-define('AUTH_KEY',         'XO+EmIWVlXa7uSR5cE7rzihlngPyObiREX9ClxM291PNUMZ1FN8IK0EDGmlGy66PsQjoUeGGmtvJ/OnR');
-define('SECURE_AUTH_KEY',  'nmQL19in8S9tersN4ysI6U4spGcf4RCrjjuNDdrPUqDLYPlBujJnVvYU+Np7uNiMKs5qCQYZqsg/ZFyX');
-define('LOGGED_IN_KEY',    '5NFDj+3Iz8uG/EMMm363TYJGCRQFt66sOhTlKVdTkQqkiWK4zVeBhio5wp3mMzm2XOTB2JV4G6iN+6ol');
-define('NONCE_KEY',        '7MVmYrOsTocUvpnJlAOP/ymS3Ck8TOiEdKizCmyLJsl70h+31LAcFqNpy0PltDOybzP4+rbzN8oEKqqj');
-define('AUTH_SALT',        'Vy/Etjv+SMIkkDaTVGOTqIftD4qasF1gq6HW6nKjHjV0rJVVPB1z20WSfrlqa6JdI/ED9H/aIfn4rrel');
-define('SECURE_AUTH_SALT', '7lFSSDmIIKyDZuZlajEV31ZY47rY/HG44VXUI6XRHr8htNEQjMmkCOdKJkQJBsrUe2JHlwG2hljguuIk');
-define('LOGGED_IN_SALT',   'f4Q55MjWElhR6OWKo/LuU3GAbJDrwB62fteTQSJtwuG1Auj0aS7u3SH6bUcmR2H+v/zwLr9dvhY+0Rzg');
-define('NONCE_SALT',       'HVnDbLlDRBonYWoCX8/8LsPbOZtWBrV8EGxGexIUuU51VrR3/7yif2FDpgklYVpk2uN6vOnZ0IlWpB12');
+define('AUTH_KEY',         getenv('AUTH_KEY'));
+define('SECURE_AUTH_KEY',  getenv('SECURE_AUTH_KEY'));
+define('LOGGED_IN_KEY',    getenv('LOGGED_IN_KEY'));
+define('NONCE_KEY',        getenv('NONCE_KEY'));
+define('AUTH_SALT',        getenv('AUTH_SALT'));
+define('SECURE_AUTH_SALT', getenv('SECURE_AUTH_SALT'));
+define('LOGGED_IN_SALT',   getenv('LOGGED_IN_SALT'));
+define('NONCE_SALT',       getenv('NONCE_SALT'));
 
 /**
  * WordPress Database Table prefix.
