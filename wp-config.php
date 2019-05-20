@@ -20,10 +20,7 @@
  * @link     https://codex.wordpress.org/Editing_wp-config.php
  */
 
-// load composer dependencies
-require_once __DIR__ . '/vendor/autoload.php';
-
-$onProd = false;
+$onProd = getenv('APPLICATION_ENV') === 'production' ?? false;
 $THEME_NAME = getenv('THEME_NAME');
 
 // database credentials
@@ -110,6 +107,7 @@ $table_prefix  = 'lt_';
  */
 // Disable pseudo cron behavior
 define('DISABLE_WP_CRON', false);
+define('DEBUG_SCRIPTS',  !$onProd);
 define('WP_DEBUG', !$onProd);
 define('WP_MEMORY_LIMIT', '512M');
 // activate default theme

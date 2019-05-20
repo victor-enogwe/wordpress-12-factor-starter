@@ -6,9 +6,12 @@ services:
         image: richarvey/nginx-php-fpm:latest
         container_name: php
         volumes:
-            - "./:/var/www/"
-            - "./wp-content:/var/www/wordpress/wp-content"
-            - ${THEME_DIR}:/var/www/wordpress/wp-content/themes/${THEME_NAME}
+            - "./nginx-site.conf:/var/www/html/conf/nginx/nginx-site.conf"
+            - "./wp-config.php:/var/www/html/wp-config.php"
+            - "./wordpress:/var/www/html"
+            - "./wp-content:/var/www/html/wp-content"
+            - ${THEME_DIR}:/var/www/html/wp-content/themes/${THEME_NAME}
+            - ${PLUGIN_DIR}:/var/www/html/wp-content/plugins/${PLUGIN_NAME}
         ports:
             - 8080:80
             - 443:443
@@ -24,7 +27,7 @@ services:
             - MYSQL_ROOT_PASSWORD=root
             - MYSQL_DATABASE=wp_db
         volumes:
-            - mysql:/var/lib/mysql2
+            - mysql:/var/lib/mysql
         ports:
             - 3306:3306
         restart: always

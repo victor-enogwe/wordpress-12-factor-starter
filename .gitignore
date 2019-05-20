@@ -22,10 +22,6 @@ html/
 
 # Include your project-specific ignores in this file
 # Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
-wp-content/uploads
-wp-content/themes/understrap/
-wp-content/themes/understrap/dist/
-wp-content/themes/understrap/node_modules/
 node_modules/*
 
 .htaccess
@@ -41,6 +37,11 @@ node_modules/*
 Thumbs.db
 
 # wordpress specific
+wordpress/
+wp-content/uploads/
+wp-content/themes/
+wp-content/plugins/
+wp-content/mu-plugins/
 wp-content/uploads/
 wp-content/blogs.dir/
 wp-content/upgrade/*
@@ -80,10 +81,6 @@ wp-content/cache/supercache/*
 /wp-admin
 /wp-includes
 /wp-content/index.php
-/wp-content/themes/twentyten
-/wp-content/themes/twentysixteen
-/wp-content/themes/index.php
-/wp-content/plugins/index.php
 
 # large/disallowed file types
 # a CDN should be used for these
@@ -124,14 +121,12 @@ wp-content/cache/supercache/*
 /logs/
 /mysql/
 /nginx/
+/html/
 /www/
 /vendor/
 /.vagrant/
-/wordpress/
-/wp-content/plugins/
-/wp-content/mu-plugins/
+
 /wpcs/
-/wp-content/uploads/
 ubuntu-xenial-16.04-cloudimg-console.log
 database.sql
 wp-cli.phar
