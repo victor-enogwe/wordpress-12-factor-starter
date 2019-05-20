@@ -107,7 +107,7 @@ $table_prefix  = 'lt_';
  */
 // Disable pseudo cron behavior
 define('DISABLE_WP_CRON', false);
-define('DEBUG_SCRIPTS',  !$onProd);
+define('SCRIPT_DEBUG', !$onProd);
 define('WP_DEBUG', !$onProd);
 define('WP_MEMORY_LIMIT', '512M');
 // activate default theme
